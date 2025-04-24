@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port, () => {
-  console.log("Server started on port " + port);
-});
+// When run locally, start the server; otherwise export the app for Vercel.
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log("Server started on port " + port);
+  });
+} else {
+  module.exports = app;
+}
