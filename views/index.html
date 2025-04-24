@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articulate Building Systems</title>
+  <link href="/dist/output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes flyIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-flyIn {
+      animation: flyIn 1s ease-out forwards;
+    }
+    .animate-flyIn-delay { animation-delay: 0.5s; }
+    .animate-flyIn-delay-2 { animation-delay: 1s; }
+  </style>
+</head>
+<body class="bg-yellow-50 font-sans leading-normal tracking-normal">
+  <!-- Fixed Header/Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+    <!-- Overlayed content -->
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-4">
+        <img src="/images/logo1.png" alt="Logo" class="w-12 h-12 object-contain">
+        <div class="text-3xl font-bold text-black">Articulate Building Systems</div>
+      </div>
+      <!-- Hamburger Icon for Mobile with elevated z-index -->
+      <div class="md:hidden">
+        <button id="nav-toggle" class="focus:outline-none z-[10000]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Regular Navbar for md screens and up -->
+      <nav id="nav-content" class="hidden md:flex">
+        <a href="#" class="px-4 py-2 text-black hover:text-gray-700 font-medium">Home</a>
+        <a href="#about" class="px-4 py-2 text-black hover:text-gray-700 font-medium">About</a>
+        <a href="#projects" class="px-4 py-2 text-black hover:text-gray-700 font-medium">Projects</a>
+        <a href="#services" class="px-4 py-2 text-black hover:text-gray-700 font-medium">Services</a>
+        <a href="#contact" class="px-4 py-2 text-black hover:text-gray-700 font-medium">Contact</a>
+      </nav>
+    </div>
+    <!-- Mobile Menu Overlay with higher z-index -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full bg-white shadow-lg z-[9999]">
+      <!-- Close Button for Mobile Menu -->
+      <button id="mobile-menu-close" class="absolute top-4 right-4 focus:outline-none z-[10000]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <nav class="flex flex-col px-6 pb-4 mt-12">
+        <a href="#" class="py-2 text-black hover:text-gray-700 font-medium">Home</a>
+        <a href="#about" class="py-2 text-black hover:text-gray-700 font-medium">About</a>
+        <a href="#projects" class="py-2 text-black hover:text-gray-700 font-medium">Projects</a>
+        <a href="#services" class="py-2 text-black hover:text-gray-700 font-medium">Services</a>
+        <a href="#contact" class="py-2 text-black hover:text-gray-700 font-medium">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Add top padding equal or a bit larger than the header height -->
+  <div class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-screen animate-flyIn" style="background-image: url('/images/background.jpg'); filter: brightness(1.1);">
+      <div class="absolute inset-0 bg-white bg-opacity-60 animate-flyIn"></div>
+      <div class="container mx-auto px-6 h-full flex items-center justify-center">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-7xl text-black font-extrabold mb-6 animate-flyIn">Quality Built Solutions</h1>
+          <p class="text-xl md:text-2xl text-black mb-8 animate-flyIn animate-flyIn-delay">Integrity and expertise provide a leading platform for valued built environment clients.</p>
+          <a href="#projects" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 animate-flyIn animate-flyIn-delay-2">Our Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white animate-flyIn">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="w-full md:w-1/2 mb-8 md:mb-0 animate-flyIn">
+            <img src="/images/letterhead.jpg" alt="Architecture Design" class="rounded-lg shadow-lg">
+          </div>
+          <div class="w-full md:w-1/2 md:pl-12 animate-flyIn animate-flyIn-delay">
+            <h2 class="text-3xl font-bold mb-4 text-black">About Us</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">We are dedicated to providing exceptional service across our professional disciplines, upholding the highest standards of integrity and statutory practices. Our commitment is to empower our team and deliver a leading platform to best serve the built environment and, above all, our valued clients.</p>
+            <a href="#contact" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded transition duration-300">Let's Connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50 animate-flyIn">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12 animate-flyIn">
+          <h2 class="text-3xl font-bold text-black">Our Projects</h2>
+          <p class="text-black">A showcase of our innovative and visually inspiring designs.</p>
+        </div>
+        <div class="grid gap-8 grid-cols-1 md:grid-cols-3">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animate-flyIn">
+            <img src="https://source.unsplash.com/600x400/?interior,design" alt="Project 1" class="w-full">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-black">30 Unit residential development for First Independent Power Limited </h3>
+              <p class="text-gray-700">A harmonious blend of form and function, designed for modern lifestyles.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animate-flyIn animate-flyIn-delay">
+            <img src="https://source.unsplash.com/600x400/?office,architecture" alt="Project 2" class="w-full">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-black">BHGE Portharcourt Trans amadi yard. New developments and facilities upgrade </h3>
+              <p class="text-gray-700">Elegant and sustainable workspace designs that inspire productivity.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animate-flyIn animate-flyIn-delay-2">
+            <img src="https://source.unsplash.com/600x400/?landscape,architecture" alt="Project 3" class="w-full">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-black"> Renovation/ Rebuild of Office complex for Sahara Bulk Storage Facilities at Abonnemma wharf Road, Portharcourt   </h3>
+              <p class="text-gray-700">Revitalizing urban spaces with innovative design and creative vision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section Carousel -->
+    <section id="services" class="py-16 bg-gray-100 animate-flyIn relative">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-black">Our Services</h2>
+          <p class="text-gray-700">We offer a variety of professional services tailored to help your business thrive.</p>
+        </div>
+        <div class="overflow-hidden">
+          <div id="services-carousel" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Slide 1: Architectural Design -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Blueprint icon for Architectural Design -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Architectural Design</h3>
+                <p class="text-gray-700 text-center">Innovative designs and aesthetic solutions for modern spaces.</p>
+              </div>
+            </div>
+            <!-- Slide 2: Building Construction -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Construction icon -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12l9-5-9-5-9 5 9 5z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Building Construction</h3>
+                <p class="text-gray-700 text-center">Robust and sustainable construction for quality builds.</p>
+              </div>
+            </div>
+            <!-- Slide 3: Landscape Design & Construction -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Tree icon for landscape -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a4 4 0 00-4 4v6a4 4 0 008 0V6a4 4 0 00-4-4z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 12h12"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Landscape Design &amp; Construction</h3>
+                <p class="text-gray-700 text-center">Creating harmonious outdoor spaces that complement architecture.</p>
+              </div>
+            </div>
+            <!-- Slide 4: Engineering Designs -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Gear icon for Engineering Designs -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83l-.09.09a2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2h0a2 2 0 01-2-2v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0l-.09-.09a2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82V9a1.65 1.65 0 001.51-1H5a2 2 0 012-2h0a2 2 0 012 2v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0l.09.09a2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v3.99z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Engineering Designs</h3>
+                <p class="text-gray-700 text-center">Comprehensive structural, electrical, mechanical &amp; HVAC solutions.</p>
+              </div>
+            </div>
+            <!-- Slide 5: Project Presentations -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Video icon for presentations -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Project Presentations</h3>
+                <p class="text-gray-700 text-center">Photorealistic 3D presentations, interiors &amp; animations to international standards.</p>
+              </div>
+            </div>
+            <!-- Slide 6: Project & Programme Management -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Group icon for management -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5"></path>
+                    <circle cx="12" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Project &amp; Programme Management</h3>
+                <p class="text-gray-700 text-center">End-to-end management ensuring timely and efficient delivery.</p>
+              </div>
+            </div>
+            <!-- Slide 7: Construction Management & Cost Consulting -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Construction icon reused -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12l9-5-9-5-9 5 9 5z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Construction Management &amp; Cost Consulting</h3>
+                <p class="text-gray-700 text-center">Expert oversight and cost efficiency with value engineering.</p>
+              </div>
+            </div>
+            <!-- Slide 8: Site Supervision & Management -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Eye icon for supervision -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7S3.732 16.057 2.458 12z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Site Supervision &amp; Management</h3>
+                <p class="text-gray-700 text-center">Professional on-site oversight for safe and efficient progress.</p>
+              </div>
+            </div>
+            <!-- Slide 9: Contract Administration & Documentation -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Document icon -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 11h10M7 15h10M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Contract Administration &amp; Documentation</h3>
+                <p class="text-gray-700 text-center">Meticulous contract handling and comprehensive documentation.</p>
+              </div>
+            </div>
+            <!-- Slide 10: Interiors & Finishes -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Square icon to represent interiors -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Interiors &amp; Finishes</h3>
+                <p class="text-gray-700 text-center">Customized interior designs and premium finishing touches.</p>
+              </div>
+            </div>
+            <!-- Slide 11: Construction Studies & Reports -->
+            <div class="flex-shrink-0 px-2">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <div class="mb-4">
+                  <!-- Report icon -->
+                  <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6M9 16h6M9 8h6M4 6h16M4 18h16"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-black text-center">Construction Studies &amp; Reports</h3>
+                <p class="text-gray-700 text-center">Detailed studies, impact assessments, soil investigations and site reporting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel Navigation Buttons (visible on md and larger screens only) -->
+        <button id="prev-slide" class="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full hover:bg-gray-800 focus:outline-none">
+          Prev
+        </button>
+        <button id="next-slide" class="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full hover:bg-gray-800 focus:outline-none">
+          Next
+        </button>
+      </div>
+    </section>
+
+    <!-- Carousel Script -->
+    <script>
+      const carousel = document.getElementById('services-carousel');
+      const prevBtn = document.getElementById('prev-slide');
+      const nextBtn = document.getElementById('next-slide');
+      let currentIndex = 0;
+      const gutter = 16; // Gap in pixels between slides
+
+      // Set each slide's width to 45% of the container width and add a right margin
+      function updateSlideWidths() {
+        const containerWidth = carousel.parentElement.offsetWidth;
+        const slideWidth = containerWidth * 0.45;
+        Array.from(carousel.children).forEach(child => {
+          child.style.width = slideWidth + 'px';
+          child.style.marginRight = gutter + 'px';
+        });
+        return slideWidth;
+      }
+
+      // Update the transform to slide the carousel by one "slide width + gutter" per index change
+      function updateCarousel() {
+        const slideWidth = updateSlideWidths();
+        carousel.style.transform = `translateX(-${currentIndex * (slideWidth + gutter)}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        const totalSlides = carousel.children.length;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        const totalSlides = carousel.children.length;
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+
+      window.addEventListener('resize', updateCarousel);
+      updateCarousel();
+    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white animate-flyIn">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12 animate-flyIn">
+          <h2 class="text-3xl font-bold text-black">Get in Touch</h2>
+          <p class="text-black">Reach out to us and let’s start building something amazing.</p>
+        </div>
+        <div class="max-w-lg mx-auto animate-flyIn animate-flyIn-delay">
+          <form class="bg-gray-50 p-8 rounded-lg shadow-md">
+            <div class="mb-4">
+              <label class="block text-black font-semibold mb-2" for="name">Name</label>
+              <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-black" type="text" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-4">
+              <label class="block text-black font-semibold mb-2" for="email">Email</label>
+              <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-black" type="email" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-4">
+              <label class="block text-black font-semibold mb-2" for="message">Message</label>
+              <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-black" id="message" placeholder="Your Message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-full transition duration-300 animate-flyIn animate-flyIn-delay-2">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-6 animate-flyIn">
+      <div class="container mx-auto text-center text-white animate-flyIn">
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://facebook.com" target="_blank" class="hover:text-gray-400 transition">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 4.99 3.66 9.12 8.44 9.93v-7.03H7.9v-2.9h2.54V9.63c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.86h2.78l-.44 2.9h-2.34v7.03C18.34 21.19 22 17.06 22 12.07z"/>
+                </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-gray-400 transition">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016.17 3c-2.5 0-4.5 2-4.5 4.5 0 .35.04.69.11 1.02C8.09 8.4 5.5 6.43 4 3.91a4.48 4.48 0 00-.61 2.27c0 1.56.79 2.94 2 3.74a4.48 4.48 0 01-2.04-.56v.06c0 2.24 1.6 4.11 3.73 4.53a4.47 4.47 0 01-2.03.08c.57 1.78 2.22 3.08 4.18 3.12A9 9 0 010 19.54a12.72 12.72 0 006.92 2"/>
+                </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="hover:text-gray-400 transition">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.75-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"/>
+                </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-gray-400 transition">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/>
+                    <path d="M2 9h4v12H2z"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+            </a>
+        </div>
+        &copy; 2025 Articulate Building Systems. All rights reserved.
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toggle script for mobile menu -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
