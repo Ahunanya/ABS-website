@@ -16,28 +16,31 @@
     }
     .animate-flyIn-delay { animation-delay: 0.5s; }
     .animate-flyIn-delay-2 { animation-delay: 1s; }
+    @media (max-width: 768px) {
+      #services-carousel h3 {
+        font-size: 1rem; /* Reduced heading font size */
+      }
+      #services-carousel p {
+        font-size: 0.875rem; /* Reduced paragraph font size */
+      }
+    }
   </style>
 </head>
 <body class="bg-yellow-50 font-sans leading-normal tracking-normal">
   <!-- Fixed Header/Navigation -->
   <header class="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
-    <!-- Overlayed content -->
     <div class="container mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center space-x-4">
         <img src="/images/logo1.png" alt="Logo" class="w-12 h-12 object-contain">
         <div class="text-3xl font-bold text-black">Articulate Building Systems</div>
       </div>
-      <!-- Hamburger Icon for Mobile with elevated z-index -->
       <div class="md:hidden">
         <button id="nav-toggle" class="focus:outline-none z-[10000]">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"></path>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
-      <!-- Regular Navbar for md screens and up -->
       <nav id="nav-content" class="hidden md:flex">
         <a href="#" class="px-4 py-2 text-black hover:text-gray-700 font-medium">Home</a>
         <a href="#about" class="px-4 py-2 text-black hover:text-gray-700 font-medium">About</a>
@@ -46,14 +49,10 @@
         <a href="#contact" class="px-4 py-2 text-black hover:text-gray-700 font-medium">Contact</a>
       </nav>
     </div>
-    <!-- Mobile Menu Overlay with higher z-index -->
     <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full bg-white shadow-lg z-[9999]">
-      <!-- Close Button for Mobile Menu -->
       <button id="mobile-menu-close" class="absolute top-4 right-4 focus:outline-none z-[10000]">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-             xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
       <nav class="flex flex-col px-6 pb-4 mt-12">
@@ -68,79 +67,99 @@
 
   <!-- Add top padding equal or a bit larger than the header height -->
   <div class="pt-20">
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center h-screen animate-flyIn" style="background-image: url('/images/background.jpg'); filter: brightness(1.1);">
-      <div class="absolute inset-0 bg-white bg-opacity-60 animate-flyIn"></div>
+    <!-- Hero Section (animate dynamically) -->
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('/images/background.jpg'); filter: brightness(1.1);">
+      <div class="absolute inset-0 bg-white bg-opacity-60"></div>
       <div class="container mx-auto px-6 h-full flex items-center justify-center">
         <div class="text-center">
-          <h1 class="text-4xl md:text-7xl text-black font-extrabold mb-6 animate-flyIn">Quality Built Solutions</h1>
-          <p class="text-xl md:text-2xl text-black mb-8 animate-flyIn animate-flyIn-delay">Integrity and expertise provide a leading platform for valued built environment clients.</p>
-          <a href="#projects" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 animate-flyIn animate-flyIn-delay-2">Our Work</a>
+          <h1 class="text-4xl md:text-7xl text-black font-extrabold">Quality Built Solutions</h1>
+          <p class="text-xl md:text-2xl text-black mb-8 animate-flyIn-delay">
+            Integrity and expertise provide a leading platform for valued built environment clients.
+          </p>
+          <a href="#projects" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 animate-flyIn-delay-2">
+            Our Work
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white animate-flyIn">
+    <!-- About Section (static animate class removed) -->
+    <section id="about" class="py-16 bg-white">
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row items-center">
-          <div class="w-full md:w-1/2 mb-8 md:mb-0 animate-flyIn">
+          <div class="w-full md:w-1/2 mb-8 md:mb-0">
             <img src="/images/letterhead.jpg" alt="Architecture Design" class="rounded-lg shadow-lg">
           </div>
-          <div class="w-full md:w-1/2 md:pl-12 animate-flyIn animate-flyIn-delay">
+          <div class="w-full md:w-1/2 md:pl-12">
             <h2 class="text-3xl font-bold mb-4 text-black">About Us</h2>
-            <p class="text-gray-700 leading-relaxed mb-6">We are dedicated to providing exceptional service across our professional disciplines, upholding the highest standards of integrity and statutory practices. Our commitment is to empower our team and deliver a leading platform to best serve the built environment and, above all, our valued clients.</p>
-            <a href="#contact" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded transition duration-300">Let's Connect</a>
+            <p class="text-gray-700 leading-relaxed mb-6">
+              We are dedicated to providing exceptional service across our professional disciplines, upholding the highest standards of integrity and statutory practices. Our commitment is to empower our team and deliver a leading platform to best serve the built environment and, above all, our valued clients.
+            </p>
+            <a href="#contact" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded transition duration-300">
+              Let's Connect
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-50 animate-flyIn">
+    <!-- Projects Section (static animate class removed) -->
+    <section id="projects" class="py-16 bg-gray-50">
       <div class="container mx-auto px-6">
-        <div class="text-center mb-12 animate-flyIn">
+        <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-black">Our Projects</h2>
           <p class="text-black">A showcase of our innovative and visually inspiring designs.</p>
         </div>
         <div class="grid gap-8 grid-cols-1 md:grid-cols-3">
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden animate-flyIn">
-            <img src="https://source.unsplash.com/600x400/?interior,design" alt="Project 1" class="w-full">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="/images/Picture45.jpg" alt="Project 1" class="w-full">
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-black">30 Unit residential development for First Independent Power Limited </h3>
-              <p class="text-gray-700">A harmonious blend of form and function, designed for modern lifestyles.</p>
+              <h3 class="text-xl font-semibold mb-2 text-black">30 Unit residential development for First Independent Power Limited</h3>
+              <p class="text-gray-700">
+                A harmonious blend of form and function, designed for modern lifestyles.
+              </p>
             </div>
           </div>
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden animate-flyIn animate-flyIn-delay">
-            <img src="https://source.unsplash.com/600x400/?office,architecture" alt="Project 2" class="w-full">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="/images/Picture65.jpg" alt="Project 2" class="w-full">
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-black">BHGE Portharcourt Trans amadi yard. New developments and facilities upgrade </h3>
-              <p class="text-gray-700">Elegant and sustainable workspace designs that inspire productivity.</p>
+              <h3 class="text-xl font-semibold mb-2 text-black">
+                BHGE Portharcourt Trans amadi yard. New developments and facilities upgrade
+              </h3>
+              <p class="text-gray-700">
+                Elegant and sustainable workspace designs that inspire productivity.
+              </p>
             </div>
           </div>
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden animate-flyIn animate-flyIn-delay-2">
-            <img src="https://source.unsplash.com/600x400/?landscape,architecture" alt="Project 3" class="w-full">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="/images/Picture69.jpg" alt="Project 3" class="w-full">
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-black"> Renovation/ Rebuild of Office complex for Sahara Bulk Storage Facilities at Abonnemma wharf Road, Portharcourt   </h3>
-              <p class="text-gray-700">Revitalizing urban spaces with innovative design and creative vision.</p>
+              <h3 class="text-xl font-semibold mb-2 text-black">
+                Renovation/ Rebuild of Office complex for Sahara Bulk Storage Facilities at Abonnemma wharf Road, Portharcourt
+              </h3>
+              <p class="text-gray-700">
+                Revitalizing urban spaces with innovative design and creative vision.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section Carousel -->
-    <section id="services" class="py-16 bg-gray-100 animate-flyIn relative">
+    <!-- Services Section Carousel (static animate class removed from the section) -->
+    <section id="services" class="py-16 bg-gray-100 relative">
       <div class="container mx-auto px-6">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-black">Our Services</h2>
-          <p class="text-gray-700">We offer a variety of professional services tailored to help your business thrive.</p>
+          <p class="text-gray-700">
+            We offer a variety of professional services tailored to help your business thrive.
+          </p>
         </div>
         <div class="overflow-hidden">
           <div id="services-carousel" class="flex transition-transform duration-500 ease-in-out">
             <!-- Slide 1: Architectural Design -->
             <div class="flex-shrink-0 px-2">
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden p-6 animate-flyIn">
                 <div class="mb-4">
                   <!-- Blueprint icon for Architectural Design -->
                   <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,7 +218,7 @@
                 <div class="mb-4">
                   <!-- Video icon for presentations -->
                   <svg class="w-12 h-12 text-black mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14"></path>
                   </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2 text-black text-center">Project Presentations</h3>
@@ -299,55 +318,14 @@
       </div>
     </section>
 
-    <!-- Carousel Script -->
-    <script>
-      const carousel = document.getElementById('services-carousel');
-      const prevBtn = document.getElementById('prev-slide');
-      const nextBtn = document.getElementById('next-slide');
-      let currentIndex = 0;
-      const gutter = 16; // Gap in pixels between slides
-
-      // Set each slide's width to 45% of the container width and add a right margin
-      function updateSlideWidths() {
-        const containerWidth = carousel.parentElement.offsetWidth;
-        const slideWidth = containerWidth * 0.45;
-        Array.from(carousel.children).forEach(child => {
-          child.style.width = slideWidth + 'px';
-          child.style.marginRight = gutter + 'px';
-        });
-        return slideWidth;
-      }
-
-      // Update the transform to slide the carousel by one "slide width + gutter" per index change
-      function updateCarousel() {
-        const slideWidth = updateSlideWidths();
-        carousel.style.transform = `translateX(-${currentIndex * (slideWidth + gutter)}px)`;
-      }
-
-      nextBtn.addEventListener('click', () => {
-        const totalSlides = carousel.children.length;
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-      });
-
-      prevBtn.addEventListener('click', () => {
-        const totalSlides = carousel.children.length;
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-      });
-
-      window.addEventListener('resize', updateCarousel);
-      updateCarousel();
-    </script>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white animate-flyIn">
+    <!-- Contact Section (static animate class removed) -->
+    <section id="contact" class="py-16 bg-white">
       <div class="container mx-auto px-6">
-        <div class="text-center mb-12 animate-flyIn">
+        <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-black">Get in Touch</h2>
           <p class="text-black">Reach out to us and let’s start building something amazing.</p>
         </div>
-        <div class="max-w-lg mx-auto animate-flyIn animate-flyIn-delay">
+        <div class="max-w-lg mx-auto">
           <form class="bg-gray-50 p-8 rounded-lg shadow-md">
             <div class="mb-4">
               <label class="block text-black font-semibold mb-2" for="name">Name</label>
@@ -361,39 +339,40 @@
               <label class="block text-black font-semibold mb-2" for="message">Message</label>
               <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-black" id="message" placeholder="Your Message" rows="4"></textarea>
             </div>
-            <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-full transition duration-300 animate-flyIn animate-flyIn-delay-2">Send Message</button>
+            <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-full transition duration-300 animate-flyIn-delay-2">
+              Send Message
+            </button>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black py-6 animate-flyIn">
-      <div class="container mx-auto text-center text-white animate-flyIn">
-        <!-- Social Links -->
+    <!-- Footer (static animate class removed) -->
+    <footer class="bg-black py-6">
+      <div class="container mx-auto text-center text-white">
         <div class="flex justify-center space-x-6 mb-4">
-            <a href="https://facebook.com" target="_blank" class="hover:text-gray-400 transition">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 4.99 3.66 9.12 8.44 9.93v-7.03H7.9v-2.9h2.54V9.63c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.86h2.78l-.44 2.9h-2.34v7.03C18.34 21.19 22 17.06 22 12.07z"/>
-                </svg>
-            </a>
-            <a href="https://twitter.com" target="_blank" class="hover:text-gray-400 transition">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016.17 3c-2.5 0-4.5 2-4.5 4.5 0 .35.04.69.11 1.02C8.09 8.4 5.5 6.43 4 3.91a4.48 4.48 0 00-.61 2.27c0 1.56.79 2.94 2 3.74a4.48 4.48 0 01-2.04-.56v.06c0 2.24 1.6 4.11 3.73 4.53a4.47 4.47 0 01-2.03.08c.57 1.78 2.22 3.08 4.18 3.12A9 9 0 010 19.54a12.72 12.72 0 006.92 2"/>
-                </svg>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="hover:text-gray-400 transition">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.75-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"/>
-                </svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="hover:text-gray-400 transition">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/>
-                    <path d="M2 9h4v12H2z"/>
-                    <circle cx="4" cy="4" r="2"/>
-                </svg>
-            </a>
+          <a href="https://facebook.com" target="_blank" class="hover:text-gray-400 transition">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 4.99 3.66 9.12 8.44 9.93v-7.03H7.9v-2.9h2.54V9.63c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.86h2.78l-.44 2.9h-2.34v7.03C18.34 21.19 22 17.06 22 12.07z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="hover:text-gray-400 transition">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016.17 3c-2.5 0-4.5 2-4.5 4.5 0 .35.04.69.11 1.02C8.09 8.4 5.5 6.43 4 3.91a4.48 4.48 0 00-.61 2.27c0 1.56.79 2.94 2 3.74a4.48 4.48 0 01-2.04-.56v.06c0 2.24 1.6 4.11 3.73 4.53a4.47 4.47 0 01-2.03.08c.57 1.78 2.22 3.08 4.18 3.12A9 9 0 010 19.54a12.72 12.72 0 006.92 2"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="hover:text-gray-400 transition">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.75-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-gray-400 transition">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/>
+              <path d="M2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
         </div>
         &copy; 2025 Articulate Building Systems. All rights reserved.
       </div>
@@ -413,6 +392,59 @@
     mobileMenuClose.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
     });
+  </script>
+
+  <!-- Intersection Observer Script: adds animate-flyIn dynamically as sections scroll into view -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-flyIn');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+  <!-- Carousel Script -->
+  <script>
+    const carousel = document.getElementById('services-carousel');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    let currentIndex = 0;
+    const gutter = 16; // Gap in pixels between slides
+
+    function updateSlideWidths() {
+      const containerWidth = carousel.parentElement.offsetWidth;
+      const slideWidth = containerWidth * 0.45;
+      Array.from(carousel.children).forEach(child => {
+        child.style.width = slideWidth + 'px';
+        child.style.marginRight = gutter + 'px';
+      });
+      return slideWidth;
+    }
+
+    function updateCarousel() {
+      const slideWidth = updateSlideWidths();
+      carousel.style.transform = `translateX(-${currentIndex * (slideWidth + gutter)}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      const totalSlides = carousel.children.length;
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const totalSlides = carousel.children.length;
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
   </script>
 </body>
 </html>
